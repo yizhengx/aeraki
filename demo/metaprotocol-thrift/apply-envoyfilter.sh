@@ -9,7 +9,7 @@ spec:
     labels:
       app: thrift-sample-server
   configPatches:
-  - applyTo: NETWORK_FILTER
+  - applyTo: LISTENER
     match:
       context: SIDECAR_INBOUND
       listener:
