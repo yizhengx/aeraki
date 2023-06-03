@@ -26,6 +26,9 @@ spec:
   replicas: 1
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
+        sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
       labels:
         app: thrift-sample-server
         version: v1
@@ -49,6 +52,9 @@ spec:
   replicas: 1
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
+        sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
       labels:
         app: thrift-sample-server
         version: v2

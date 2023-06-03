@@ -18,6 +18,7 @@ BASEDIR=$(dirname "$0")
 source $BASEDIR/../common_func.sh
 
 kubectl create ns thrift
+kubectl create configmap rate-limit-filter --from-file=rate-limit-filter.wasm="$BASEDIR/http-headers.wasm" -n thrift
 LabelIstioInjectLabel thrift
 kubectl apply -f $BASEDIR/thrift-sample.yaml -n thrift
 kubectl apply -f $BASEDIR/destinationrule.yaml -n thrift
