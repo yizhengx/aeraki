@@ -9,15 +9,13 @@ spec:
     labels:
       app: thrift-sample-server
   configPatches:
-  - applyTo: THRIFT_FILTER
+  - applyTo: NETWORK_FILTER
     match:
       context: SIDECAR_INBOUND
       listener:
         filterChain:
           filter:
             name: envoy.filters.network.meta_protocol_proxy
-            subFilter:
-              name: aeraki.meta_protocol.filters.router
     patch:
       operation: INSERT_BEFORE
       value:
