@@ -1,6 +1,7 @@
 action=$1
 kubectl $action -n meta-thrift -f - <<EOF
 apiVersion: networking.istio.io/v1alpha3
+name: thrift-server-rate-limit-envoyfilter
 kind: EnvoyFilter
 metadata:
   app: thrift-sample-server
