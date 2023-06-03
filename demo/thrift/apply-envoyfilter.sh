@@ -22,7 +22,7 @@ spec:
         name: mydummy
         typed_config:
           '@type': type.googleapis.com/udpa.type.v1.TypedStruct
-          type_url: type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm
+          type_url: type.googleapis.com/envoy.extensions.filters.network.wasm.v3.Wasm
           value:
             config:
               configuration:
