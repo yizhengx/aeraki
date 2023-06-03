@@ -18,7 +18,7 @@ BASEDIR=$(dirname "$0")
 source $BASEDIR/../common_func.sh
 
 kubectl create ns meta-thrift
-kubectl create configmap rate-limit-filter --from-file=rate-limit-filter.wasm="http-headers.wasm" -n meta-thrift
+kubectl create configmap rate-limit-filter --from-file=rate-limit-filter.wasm="$BASEDIR/http-headers.wasm" -n meta-thrift
 LabelIstioInjectLabel meta-thrift
 
 kubectl apply -f $BASEDIR/thrift-sample.yaml -n meta-thrift
