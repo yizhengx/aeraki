@@ -17,7 +17,7 @@ spec:
           filter:
             name: envoy.filters.network.thrift_proxy
     patch:
-      operation: INSERT_BEFORE
+      operation: INSERT_FIRST
       value:
         name: mydummy
         typed_config:
