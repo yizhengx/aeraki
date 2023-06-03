@@ -27,7 +27,9 @@ spec:
           type_url: type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm
           value:
             config:
-              configuration:{}
+              configuration:
+                '@type': type.googleapis.com/google.protobuf.StringValue
+                value: '{"delay": "1", "tick": "1"}'
               root_id: "rate-limit-filter"
               vm_config:
                 code:
