@@ -23,18 +23,9 @@ spec:
   - thrift-sample-server.meta-thrift.svc.cluster.local
   localRateLimit:
     tokenBucket:
-      fillInterval: 60s
-      maxTokens: 5
+      fillInterval: 50ms
+      maxTokens: 150000000
       tokensPerFill: 5
-    conditions:
-    - tokenBucket:
-        fillInterval: 30s
-        maxTokens: 2
-        tokensPerFill: 2
-      match:
-        attributes:
-          method:
-            exact: sayHello
   routes:
     - name: v2
       match:
