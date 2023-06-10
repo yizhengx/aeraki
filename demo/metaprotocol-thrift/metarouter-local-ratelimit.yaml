@@ -26,13 +26,13 @@ spec:
       fillInterval: 50ms
       maxTokens: 150000000
       tokensPerFill: 5
-  routes:
-    - name: v2
-      match:
-        attributes:
-          method:
-            exact: sayHello
-      route:
-        - destination:
-            host: thrift-sample-server.meta-thrift.svc.cluster.local
-            subset: v2
+  # routes:
+  #   - name: v2
+  #     match:
+  #       attributes:
+  #         method:
+  #           exact: sayHello
+  #     route:
+  #       - destination:
+  #           host: thrift-sample-server.meta-thrift.svc.cluster.local
+  #           subset: v2
