@@ -126,7 +126,6 @@ spec:
     app: thrift-sample-client
   ports:
     - name: tcp-metaprotocol-thrift-hello-client
-      protocol: TCP
       port: 9009
       targetPort: 9009
 ---
