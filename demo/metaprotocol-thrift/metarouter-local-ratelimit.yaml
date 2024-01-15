@@ -23,7 +23,7 @@ spec:
   - thrift-sample-server.meta-thrift.svc.cluster.local
   localRateLimit:
     tokenBucket:
-      fillInterval: 2000ms
+      fillInterval: 10000ms
       maxTokens: 10000000
       tokensPerFill: 5
   # routes:
