@@ -30,8 +30,8 @@ spec:
         sidecar.istio.io/bootstrapOverride: aeraki-bootstrap-config
         sidecar.istio.io/proxyImage: ghcr.io/aeraki-mesh/meta-protocol-proxy-debug:1.2.3
         sidecar.istio.io/rewriteAppHTTPProbers: "false"
-        sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
-        sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
+        # sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
+        # sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
       labels:
         app: thrift-sample-server
         version: v1
@@ -61,8 +61,8 @@ spec:
         # sidecar.istio.io/proxyImage: yizhengx/meta-protocol:latest # logging version
         sidecar.istio.io/proxyImage: yizhengx/meta-protocol-proxy:fixed-version
         sidecar.istio.io/rewriteAppHTTPProbers: "false"
-        sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
-        sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
+        # sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
+        # sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
       labels:
         app: thrift-sample-server
         version: v2
