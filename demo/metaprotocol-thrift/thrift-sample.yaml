@@ -103,6 +103,8 @@ spec:
               value: "thrift-sample-server"
             - name: mode
               value: demo
+          ports:
+            - containerPort: 9009
 ---
 apiVersion: v1
 kind: Service
