@@ -12,35 +12,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: thrift-sample-server-v1
-  labels:
-    app: thrift-sample-server
-spec:
-  selector:
-    matchLabels:
-      app: thrift-sample-server
-  replicas: 1
-  template:
-    metadata:
-      annotations:
-        sidecar.istio.io/bootstrapOverride: aeraki-bootstrap-config
-        sidecar.istio.io/proxyImage: ghcr.io/aeraki-mesh/meta-protocol-proxy-debug:1.2.3
-        sidecar.istio.io/rewriteAppHTTPProbers: "false"
-        # sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
-        # sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
-      labels:
-        app: thrift-sample-server
-        version: v1
-    spec:
-      containers:
-        - name: thrift-sample-server
-          image: ghcr.io/aeraki-mesh/thrift-sample-server
-          ports:
-            - containerPort: 9090
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: thrift-sample-server-v1
+#   labels:
+#     app: thrift-sample-server
+# spec:
+#   selector:
+#     matchLabels:
+#       app: thrift-sample-server
+#   replicas: 1
+#   template:
+#     metadata:
+#       annotations:
+#         sidecar.istio.io/bootstrapOverride: aeraki-bootstrap-config
+#         sidecar.istio.io/proxyImage: ghcr.io/aeraki-mesh/meta-protocol-proxy-debug:1.2.3
+#         sidecar.istio.io/rewriteAppHTTPProbers: "false"
+#         # sidecar.istio.io/userVolume: '[{"name":"rate-limit-filter","configMap":{"name":"rate-limit-filter"}}]'
+#         # sidecar.istio.io/userVolumeMount: '[{"mountPath":"/var/local/wasm","name":"rate-limit-filter"}]'
+#       labels:
+#         app: thrift-sample-server
+#         version: v1
+#     spec:
+#       containers:
+#         - name: thrift-sample-server
+#           image: ghcr.io/aeraki-mesh/thrift-sample-server
+#           ports:
+#             - containerPort: 9090
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -102,7 +102,7 @@ spec:
             - name: helloServer
               value: "thrift-sample-server"
             - name: mode
-              value: demo
+              value: -
           ports:
             - containerPort: 9009
 ---
