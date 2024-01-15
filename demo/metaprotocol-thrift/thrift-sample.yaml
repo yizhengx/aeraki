@@ -102,7 +102,7 @@ spec:
             - name: helloServer
               value: "thrift-sample-server"
             - name: mode
-              value: demo
+              value: notdemo
           ports:
             - containerPort: 9009
 ---
