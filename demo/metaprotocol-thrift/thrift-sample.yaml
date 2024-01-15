@@ -117,6 +117,19 @@ spec:
       port: 9090
       targetPort: 9090
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: thrift-sample-client
+spec:
+  selector:
+    app: thrift-sample-client
+  ports:
+    - name: tcp-metaprotocol-thrift-hello-client
+      protocol: TCP
+      port: 9009
+      targetPort: 9009
+---
 # network-tool is used for debugging purpose
 # apiVersion: apps/v1
 # kind: Deployment
