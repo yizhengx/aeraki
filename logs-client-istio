@@ -1,0 +1,148 @@
+2024-04-07T23:01:41.866113Z	info	FLAG: --concurrency="0"
+2024-04-07T23:01:41.866149Z	info	FLAG: --domain="meta-thrift.svc.cluster.local"
+2024-04-07T23:01:41.866156Z	info	FLAG: --help="false"
+2024-04-07T23:01:41.866159Z	info	FLAG: --log_as_json="false"
+2024-04-07T23:01:41.866163Z	info	FLAG: --log_caller=""
+2024-04-07T23:01:41.866167Z	info	FLAG: --log_output_level="default:debug"
+2024-04-07T23:01:41.866170Z	info	FLAG: --log_rotate=""
+2024-04-07T23:01:41.866176Z	info	FLAG: --log_rotate_max_age="30"
+2024-04-07T23:01:41.866181Z	info	FLAG: --log_rotate_max_backups="1000"
+2024-04-07T23:01:41.866188Z	info	FLAG: --log_rotate_max_size="104857600"
+2024-04-07T23:01:41.866196Z	info	FLAG: --log_stacktrace_level="default:none"
+2024-04-07T23:01:41.866214Z	info	FLAG: --log_target="[stdout]"
+2024-04-07T23:01:41.866225Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2024-04-07T23:01:41.866232Z	info	FLAG: --outlierLogPath=""
+2024-04-07T23:01:41.866240Z	info	FLAG: --profiling="true"
+2024-04-07T23:01:41.866246Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2024-04-07T23:01:41.866252Z	info	FLAG: --proxyLogLevel="warning"
+2024-04-07T23:01:41.866260Z	info	FLAG: --s2a_enable_appengine_dialer="false"
+2024-04-07T23:01:41.866267Z	info	FLAG: --s2a_timeout="3s"
+2024-04-07T23:01:41.866273Z	info	FLAG: --serviceCluster="istio-proxy"
+2024-04-07T23:01:41.866279Z	info	FLAG: --stsPort="0"
+2024-04-07T23:01:41.866284Z	info	FLAG: --templateFile=""
+2024-04-07T23:01:41.866290Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2024-04-07T23:01:41.866297Z	info	FLAG: --vklog="0"
+2024-04-07T23:01:41.866304Z	info	Version 1.18-dev-592868ecccb3270a3af17000fb41574a3cc0b888-dirty-Modified
+2024-04-07T23:01:41.868915Z	info	Maximum file descriptors (ulimit -n): 1048576
+2024-04-07T23:01:41.869321Z	info	Proxy role	ips=[192.168.235.147] type=sidecar id=thrift-sample-client-6c98878bf7-8g686.meta-thrift domain=meta-thrift.svc.cluster.local
+2024-04-07T23:01:41.869449Z	info	Apply proxy config from env {"tracing":{"zipkin":{"address":"zipkin.istio-system:9411"},"sampling":100},"proxyMetadata":{"ISTIO_META_DNS_CAPTURE":"true"},"proxyStatsMatcher":{"inclusionPrefixes":["thrift","dubbo","kafka","meta_protocol"],"inclusionRegexps":[".*dubbo.*",".*thrift.*",".*kafka.*",".*zookeeper.*",".*meta_protocol.*"]},"holdApplicationUntilProxyStarts":true}
+
+2024-04-07T23:01:41.872027Z	info	cpu limit detected as 2, setting concurrency
+2024-04-07T23:01:41.872483Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+holdApplicationUntilProxyStarts: true
+proxyAdminPort: 15000
+proxyMetadata:
+  ISTIO_META_DNS_CAPTURE: "true"
+proxyStatsMatcher:
+  inclusionPrefixes:
+  - thrift
+  - dubbo
+  - kafka
+  - meta_protocol
+  inclusionRegexps:
+  - .*dubbo.*
+  - .*thrift.*
+  - .*kafka.*
+  - .*zookeeper.*
+  - .*meta_protocol.*
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  sampling: 100
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2024-04-07T23:01:41.872498Z	info	JWT policy is third-party-jwt
+2024-04-07T23:01:41.872503Z	info	using credential fetcher of JWT type in cluster.local trust domain
+2024-04-07T23:01:41.972869Z	debug	error in getting aws info for iam/info : Get "http://169.254.169.254/latest/meta-data/iam/info": dial tcp 169.254.169.254:80: i/o timeout (Client.Timeout exceeded while awaiting headers)
+2024-04-07T23:01:41.973007Z	info	Opening status port 15020
+2024-04-07T23:01:41.973110Z	info	dns	Starting local udp DNS server on 127.0.0.1:15053
+2024-04-07T23:01:41.973407Z	info	dns	Starting local tcp DNS server on 127.0.0.1:15053
+2024-04-07T23:01:41.973468Z	info	Workload SDS socket not found. Starting Istio SDS Server
+2024-04-07T23:01:41.973506Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2024-04-07T23:01:41.973541Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2024-04-07T23:01:42.000160Z	info	ads	All caches have been synced up in 135.098826ms, marking server ready
+2024-04-07T23:01:42.000697Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2024-04-07T23:01:42.001411Z	info	sds	Starting SDS grpc server
+2024-04-07T23:01:42.002270Z	info	starting Http service at 127.0.0.1:15004
+2024-04-07T23:01:42.004776Z	info	Pilot SAN: [istiod.istio-system.svc]
+2024-04-07T23:01:42.004877Z	debug	Add file var/run/secrets/istio/root-cert.pem watcher
+2024-04-07T23:01:42.006184Z	info	Starting proxy agent
+2024-04-07T23:01:42.006217Z	info	starting
+2024-04-07T23:01:42.006285Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev.json --drain-time-s 45 --drain-strategy immediate --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --allow-unknown-static-fields --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n %g:%#	%v	thread=%t -l warning --component-log-level misc:error --config-yaml 
+    {
+       "static_resources":{
+          "clusters":[
+             {
+                "name":"aeraki-xds",
+                "type":"STRICT_DNS",
+                "connect_timeout":"1s",
+                "max_requests_per_connection":1,
+                "circuit_breakers":{
+                   "thresholds":[
+                      {
+                         "max_connections":100000,
+                         "max_pending_requests":100000,
+                         "max_requests":100000
+                      },
+                      {
+                         "priority":"HIGH",
+                         "max_connections":100000,
+                         "max_pending_requests":100000,
+                         "max_requests":100000
+                      }
+                   ]
+                },
+                "http2_protocol_options":{
+
+                },
+                "upstream_connection_options":{
+                   "tcp_keepalive":{
+                      "keepalive_time":300
+                   }
+                },
+                "load_assignment":{
+                   "cluster_name":"aeraki-xds",
+                   "endpoints":[
+                      {
+                         "lb_endpoints":[
+                            {
+                               "endpoint":{
+                                  "address":{
+                                     "socket_address":{
+                                        "address":"aeraki.istio-system",
+                                        "port_value":15010
+                                     }
+                                  }
+                               }
+                            }
+                         ]
+                      }
+                   ]
+                }
+             }
+          ]
+       }
+    }
+ --concurrency 2]
+2024-04-07T23:01:42.092761Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2024-04-07T23:01:42.159119Z	info	ads	ADS: new connection for node:thrift-sample-client-6c98878bf7-8g686.meta-thrift-1
+2024-04-07T23:01:42.159119Z	info	ads	ADS: new connection for node:thrift-sample-client-6c98878bf7-8g686.meta-thrift-2
+2024-04-07T23:01:42.806242Z	info	cache	generated new workload certificate	latency=805.498169ms ttl=23h59m59.193790132s
+2024-04-07T23:01:42.806319Z	info	cache	Root cert has changed, start rotating root cert
+2024-04-07T23:01:42.806345Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+2024-04-07T23:01:42.806435Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.193570928s
+2024-04-07T23:01:42.806462Z	info	cache	returned workload certificate from cache	ttl=23h59m59.193543321s
+2024-04-07T23:01:42.806603Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.193421467s
+2024-04-07T23:01:42.807021Z	info	ads	SDS: PUSH request for node:thrift-sample-client-6c98878bf7-8g686.meta-thrift resources:1 size:4.0kB resource:default
+2024-04-07T23:01:42.807098Z	info	ads	SDS: PUSH request for node:thrift-sample-client-6c98878bf7-8g686.meta-thrift resources:1 size:1.1kB resource:ROOTCA
+2024-04-07T23:01:42.807218Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.192788864s
+2024-04-07T23:01:42.968250Z	info	Readiness succeeded in 1.112197725s
+2024-04-07T23:01:42.969106Z	info	Envoy proxy is ready

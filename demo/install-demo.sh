@@ -21,7 +21,7 @@ DEMO=$1
 SCRIPTS_DIR=$BASEDIR/test/e2e/scripts
 
 if [ -z "$AERAKI_TAG" ]; then
-  export AERAKI_TAG="1.2.3"
+  export AERAKI_TAG="1.4.2"
 fi
 bash ${SCRIPTS_DIR}/istio.sh
 bash ${SCRIPTS_DIR}/addons.sh
@@ -30,7 +30,7 @@ bash ${SCRIPTS_DIR}/aeraki.sh
 if [ "${DEMO}" == "default" ]
 then
     echo "install default demo"
-    bash ${BASEDIR}/demo/metaprotocol-dubbo/install.sh
+    # bash ${BASEDIR}/demo/metaprotocol-dubbo/install.sh
     bash ${BASEDIR}/demo/metaprotocol-thrift/install.sh
 elif [ "${DEMO}" == "brpc" ]
 then

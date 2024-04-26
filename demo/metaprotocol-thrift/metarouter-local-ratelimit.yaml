@@ -24,7 +24,7 @@ spec:
   localRateLimit:
     tokenBucket:
       fillInterval: 50ms
-      maxTokens: 10000000
+      maxTokens: 2500
       tokensPerFill: 5
   # routes:
   #   - name: v2
